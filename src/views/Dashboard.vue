@@ -1,10 +1,10 @@
 <script setup>
 import MobileMenu from "@/components/MobileMenu.vue";
+import Stories from "@/components/Stories.vue";
 </script>
 
 <template>
   <main class="main-container">
-    <!-- Mobile Header (Hanya muncul di Mobile) -->
     <header class="mobile-top-bar">
       <div class="logo">Story App</div>
       <div class="mobile-actions">
@@ -34,34 +34,7 @@ import MobileMenu from "@/components/MobileMenu.vue";
       </div>
     </header>
 
-    <!-- Stories Tray (Scroll Horizontal) -->
-    <section class="stories-section">
-      <div class="stories-scroll">
-        <!-- My Story -->
-        <div class="story-item">
-          <div class="avatar-ring my-story">
-            <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
-              class="story-avatar"
-            />
-            <div class="add-badge">+</div>
-          </div>
-          <span class="story-name" style="color: var(--text-secondary)"
-            >Cerita Anda</span
-          >
-        </div>
-        <!-- Friend 1 -->
-        <div class="story-item">
-          <div class="avatar-ring">
-            <img
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop"
-              class="story-avatar"
-            />
-          </div>
-          <span class="story-name">sarah_w</span>
-        </div>
-      </div>
-    </section>
+    <Stories />
 
     <!-- Grid Content -->
     <section class="grid-container">
