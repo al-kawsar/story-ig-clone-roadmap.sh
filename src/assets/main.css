@@ -1,6 +1,6 @@
 /* --- VARIABLE WARNA --- */
 :root {
-  --bg-body: red;
+  --bg-body: #1b1b1b;
   --bg-app: #111;
   --bg-card: #1e293b;
   --bg-sidebar: #111;
@@ -155,7 +155,7 @@ body {
   border-radius: 50%;
   border: 3px solid var(--bg-app);
   object-fit: cover;
-  background-color: green;
+  background-color: var(--bg-card);
 }
 .my-story .story-avatar {
   border: none;

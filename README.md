@@ -1,6 +1,6 @@
 # Instagram Story Clone
 
-This project is a client-side clone of the Instagram Stories feature, built with Vue.js and Vite. It allows users to view and post temporary stories that disappear after 24 hours.
+This project is a client-side clone of the Instagram Stories feature, built with Vue.js and Vite.
 
 ![Stories project clone](./public/ss.png)
 
@@ -32,10 +32,11 @@ This project is a client-side clone of the Instagram Stories feature, built with
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/al-kawsar/story-ig-clone-roadmap.sh.git story_ig_clone && cd story_ig_clone
+    git clone https://github.com/al-kawsar/24hr-feature-roadmapsh.git story_ig_clone && cd story_ig_clone
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
