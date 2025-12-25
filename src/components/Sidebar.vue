@@ -4,7 +4,7 @@
     <div class="sidebar-logo">Story App</div>
 
     <div class="sidebar-menu">
-      <a href="#" class="sidebar-item active">
+      <router-link to="/" class="sidebar-item active">
         <svg
           width="24"
           height="24"
@@ -15,7 +15,7 @@
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         </svg>
         <span>Beranda</span>
-      </a>
+      </router-link>
       <a href="#" class="sidebar-item">
         <svg
           width="24"
@@ -43,3 +43,56 @@
     </div>
   </nav>
 </template>
+<style scoped>
+/* --- SIDEBAR DESKTOP (Hidden on Mobile) --- */
+.desktop-sidebar {
+  display: none; /* Default hidden */
+  min-width: 245px;
+  background-color: var(--bg-sidebar);
+  border-right: 0.1px solid var(--border-color);
+  padding: 40px 24px;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar-logo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: block;
+  font-family: "Segoe UI", cursive;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item.active {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .desktop-sidebar {
+    display: flex;
+  }
+}
+</style>
