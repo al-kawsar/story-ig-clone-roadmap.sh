@@ -15,6 +15,34 @@
   --story-seen: #334155;
 }
 
+/* ===== Scrollbar Global ===== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-app);
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-primary), #3b82f6);
+  border-radius: 10px;
+  border: 2px solid var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa, var(--accent-primary));
+}
+
 /* --- RESET & BASE --- */
 * {
   margin: 0;
@@ -64,51 +92,6 @@ body {
   gap: 20px;
 }
 
-/* --- SIDEBAR DESKTOP (Hidden on Mobile) --- */
-.desktop-sidebar {
-  display: none; /* Default hidden */
-  width: 245px;
-  background-color: var(--bg-sidebar);
-  border-right: 0.1px solid var(--border-color);
-  padding: 40px 24px;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.sidebar-logo {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.sidebar-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.sidebar-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-item.active {
-  font-weight: 700;
-}
-
 /* --- CONTENT AREA --- */
 .main-container {
   flex: 1;
@@ -116,6 +99,7 @@ body {
   flex-direction: column;
   overflow-y: auto;
   position: relative;
+  padding-bottom: 55px; /* Space for fixed bottom nav */
 }
 
 /* --- STORIES TRAY --- */
@@ -171,7 +155,7 @@ body {
   border-radius: 50%;
   border: 3px solid var(--bg-app);
   object-fit: cover;
-  background-color: var(--bg-card);
+  background-color: green;
 }
 .my-story .story-avatar {
   border: none;
@@ -206,8 +190,8 @@ body {
 
 /* --- STORY GRID --- */
 .grid-container {
-  padding: 16px;
-  flex: 1;
+  /*  padding: 16px;*/
+  /*  flex: 1;*/
 }
 
 .story-grid {
@@ -274,13 +258,17 @@ body {
 
 /* --- BOTTOM NAV (Mobile Only) --- */
 .mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 55px;
   background-color: var(--bg-app);
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-shrink: 0;
+  z-index: 100;
 }
 
 .nav-btn {
@@ -317,6 +305,11 @@ body {
   .mobile-top-bar,
   .mobile-bottom-nav {
     display: none;
+  }
+
+  /* Remove bottom padding on tablet/desktop */
+  .main-container {
+    padding-bottom: 0;
   }
 
   /* Tampilkan elemen Desktop */
